@@ -1,9 +1,10 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>M/s Qasmi Enterprises — PM Surya Ghar Yojna | Rooftop Solar, Muzaffarnagar</title>
+<title>M/S Qasmi Enterprises — PM Surya Ghar Yojna | Rooftop Solar, Muzaffarnagar</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600&family=Noto+Sans+Devanagari:wght@500;600;700&display=swap" rel="stylesheet">
 <style>
@@ -49,8 +50,10 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 200; padding: 16px 60
 .nav-logo .txt { font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 18px; color: var(--white); letter-spacing: -0.01em; line-height: 1.15; }
 .nav-logo .txt small { display: block; font-family: 'Inter', sans-serif; font-weight: 500; font-size: 10.5px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); }
 .nav-links { display: flex; align-items: center; gap: 34px; list-style: none; }
-.nav-links a { text-decoration: none; color: var(--muted); font-size: 13.5px; font-weight: 500; letter-spacing: 0.02em; transition: color 0.2s; }
+.nav-links a { text-decoration: none; color: var(--muted); font-size: 13.5px; font-weight: 500; letter-spacing: 0.02em; transition: color 0.2s; position: relative; }
 .nav-links a:hover { color: var(--white); }
+.nav-links a.active { color: var(--gold); }
+.nav-links a.active::after { content: ''; position: absolute; left: 0; right: 0; bottom: -6px; height: 2px; background: var(--gold); border-radius: 2px; }
 .nav-cta { background: var(--gold); color: #1a1204 !important; padding: 10px 20px; border-radius: 8px; font-weight: 600; }
 .nav-cta:hover { background: #ffc65c; }
 .nav-toggle { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
@@ -214,6 +217,16 @@ footer { padding: 40px 60px; display: flex; align-items: center; justify-content
 .wa-float { position: fixed; bottom: 24px; right: 24px; z-index: 400; width: 58px; height: 58px; border-radius: 50%; background: #25d366; display: flex; align-items: center; justify-content: center; font-size: 26px; text-decoration: none; box-shadow: 0 10px 30px rgba(37,211,102,0.4); animation: floatPulse 2.4s ease-in-out infinite; }
 @keyframes floatPulse { 0%,100%{ transform: scale(1);} 50%{ transform: scale(1.07);} }
 
+/* Back to top button */
+.top-btn { position: fixed; bottom: 24px; right: 92px; z-index: 400; width: 48px; height: 48px; border-radius: 50%; background: var(--card); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; font-size: 18px; color: var(--gold); cursor: pointer; opacity: 0; visibility: hidden; transform: translateY(10px); transition: all 0.3s; text-decoration: none; }
+.top-btn.show { opacity: 1; visibility: visible; transform: translateY(0); }
+.top-btn:hover { border-color: rgba(246,185,59,0.4); }
+
+/* Form field error state */
+.form-group input.error, .form-group textarea.error { border-color: #ff5c5c; }
+.form-note { font-size: 12px; color: #ff8a8a; display: none; }
+.form-note.show { display: block; }
+
 /* ===== RESPONSIVE ===== */
 @media (max-width: 1080px) {
   .services-grid { grid-template-columns: repeat(2,1fr); }
@@ -261,7 +274,7 @@ footer { padding: 40px 60px; display: flex; align-items: center; justify-content
       <line x1="20.5" y1="24" x2="34" y2="24" stroke="#0c1d34" stroke-width="1"/>
       <line x1="19" y1="29" x2="32.3" y2="29" stroke="#0c1d34" stroke-width="1"/>
     </svg>
-    <div class="txt">Qasmi Enterprises<small>PM Surya Ghar Yojna</small></div>
+    <div class="txt">M/S Qasmi Enterprises<small>PM Surya Ghar Yojna</small></div>
   </a>
   <ul class="nav-links">
     <li><a href="#hero">Home</a></li>
@@ -292,10 +305,10 @@ footer { padding: 40px 60px; display: flex; align-items: center; justify-content
     <div class="hero-badge"><span class="badge-dot"></span> Govt. Subsidy Assistance Available</div>
     <h1 class="hero-title">Go Solar. Cut Your<br><span class="accent">Electricity Bill</span> to Zero.</h1>
     <p class="hero-title-hi hi">सौर ऊर्जा अपनाएं, बिजली बिल से छुटकारा पाएं</p>
-    <p class="hero-sub">M/s Qasmi Enterprises brings PM Surya Ghar Muft Bijli Yojna to your rooftop — full solar design, installation, and easy bank loan support, all from your local team in Baghra, Muzaffarnagar.</p>
+    <p class="hero-sub">M/S Qasmi Enterprises brings PM Surya Ghar Muft Bijli Yojna to your rooftop — full solar design, installation, and easy bank loan support, all from your local team in Baghra, Muzaffarnagar.</p>
     <div class="hero-btns">
-      <a href="https://wa.me/918082347215?text=Hi%2C%20I%20want%20a%20free%20solar%20quote%20for%20my%20home." class="btn-whatsapp" target="_blank">💬 Chat on WhatsApp</a>
-      <a href="tel:+918082347215" class="btn-primary">📞 Call for Free Site Visit</a>
+      <a href="https://wa.me/919760547652?text=Hi%2C%20I%20want%20a%20free%20solar%20quote%20for%20my%20home." class="btn-whatsapp" target="_blank">💬 Chat on WhatsApp</a>
+      <a href="tel:+919760547652" class="btn-primary">📞 Call for Free Site Visit</a>
       <a href="#scheme" class="btn-ghost">Learn About the Yojna ↓</a>
     </div>
     <div class="hero-stats">
@@ -426,7 +439,7 @@ footer { padding: 40px 60px; display: flex; align-items: center; justify-content
     <div class="why-badge"><span class="big">Local</span><span class="small">Muzaffarnagar Team</span></div>
   </div>
   <div class="fade-up">
-    <div class="section-tag">Why Qasmi Enterprises</div>
+    <div class="section-tag">Why M/S Qasmi Enterprises</div>
     <h2 class="section-title">Your neighbourhood solar experts, not a call centre.</h2>
     <p class="section-sub">Based near Bhartiya State Bank on Mandi Road, Baghra — we're close by for site visits, installation, and every follow-up after.</p>
     <ul class="why-list">
@@ -459,21 +472,21 @@ footer { padding: 40px 60px; display: flex; align-items: center; justify-content
   </div>
   <div class="team-grid">
     <div class="team-card fade-up">
-      <div class="team-avatar">MP</div>
-      <div class="team-name">M. Parvez</div>
-      <div class="team-role">Consultant</div>
-      <div class="team-actions">
-        <a href="tel:+918082347215" class="team-btn call">📞 8082347215</a>
-        <a href="https://wa.me/918082347215" target="_blank" class="team-btn wa">💬 WhatsApp</a>
-      </div>
-    </div>
-    <div class="team-card fade-up">
       <div class="team-avatar">MS</div>
       <div class="team-name">M. Shakib</div>
       <div class="team-role">Consultant</div>
       <div class="team-actions">
         <a href="tel:+919760547652" class="team-btn call">📞 9760547652</a>
         <a href="https://wa.me/919760547652" target="_blank" class="team-btn wa">💬 WhatsApp</a>
+      </div>
+    </div>
+    <div class="team-card fade-up">
+      <div class="team-avatar">MP</div>
+      <div class="team-name">M. Parvez</div>
+      <div class="team-role">Consultant</div>
+      <div class="team-actions">
+        <a href="tel:+918082347215" class="team-btn call">📞 8082347215</a>
+        <a href="https://wa.me/918082347215" target="_blank" class="team-btn wa">💬 WhatsApp</a>
       </div>
     </div>
     <div class="team-card fade-up">
@@ -493,8 +506,8 @@ footer { padding: 40px 60px; display: flex; align-items: center; justify-content
   <h2 class="cta-title">Ready to <span>go solar?</span></h2>
   <p class="cta-title-hi hi">आज ही मुफ्त साइट विज़िट बुक करें</p>
   <div class="cta-btns">
-    <a href="https://wa.me/918082347215?text=Hi%2C%20I%20want%20a%20free%20solar%20quote%20for%20my%20home." class="btn-whatsapp" target="_blank">💬 Chat on WhatsApp Now</a>
-    <a href="tel:+918082347215" class="btn-primary">📞 Call Us Now</a>
+    <a href="https://wa.me/919760547652?text=Hi%2C%20I%20want%20a%20free%20solar%20quote%20for%20my%20home." class="btn-whatsapp" target="_blank">💬 Chat on WhatsApp Now</a>
+    <a href="tel:+919760547652" class="btn-primary">📞 Call Us Now</a>
   </div>
 </section>
 
@@ -511,19 +524,19 @@ footer { padding: 40px 60px; display: flex; align-items: center; justify-content
         <div class="contact-icon">📍</div>
         <div><div class="contact-label">Address</div><div class="contact-val">Near Bhartiye State Bank, Mandi Road, Baghra, Muzaffarnagar</div></div>
       </a>
-      <a href="tel:+918082347215" class="contact-item">
-        <div class="contact-icon">📞</div>
-        <div><div class="contact-label">Call</div><div class="contact-val">M. Parvez — 8082347215</div></div>
-      </a>
       <a href="tel:+919760547652" class="contact-item">
         <div class="contact-icon">📞</div>
         <div><div class="contact-label">Call</div><div class="contact-val">M. Shakib — 9760547652</div></div>
+      </a>
+      <a href="tel:+918082347215" class="contact-item">
+        <div class="contact-icon">📞</div>
+        <div><div class="contact-label">Call</div><div class="contact-val">M. Parvez — 8082347215</div></div>
       </a>
       <a href="tel:+919456026111" class="contact-item">
         <div class="contact-icon">📞</div>
         <div><div class="contact-label">Call</div><div class="contact-val">Ziaulhaq Qasmi — 9456026111</div></div>
       </a>
-      <a href="https://wa.me/918082347215?text=Hi%2C%20I%20want%20a%20free%20solar%20quote%20for%20my%20home." target="_blank" class="btn-whatsapp" style="justify-content:center;margin-top:8px;">💬 Chat on WhatsApp Now</a>
+      <a href="https://wa.me/919760547652?text=Hi%2C%20I%20want%20a%20free%20solar%20quote%20for%20my%20home." target="_blank" class="btn-whatsapp" style="justify-content:center;margin-top:8px;">💬 Chat on WhatsApp Now</a>
     </div>
 
     <form class="contact-form fade-up" onsubmit="handleSubmit(event)">
@@ -549,42 +562,148 @@ footer { padding: 40px 60px; display: flex; align-items: center; justify-content
 
 <!-- FOOTER -->
 <footer>
-  <div class="footer-logo">Qasmi Enterprises<span>.</span></div>
-  <div class="footer-copy">© 2026 M/s Qasmi Enterprises — PM Surya Ghar Yojna. Baghra, Muzaffarnagar.</div>
+  <div class="footer-logo">M/S Qasmi Enterprises<span>.</span></div>
+  <div class="footer-copy">© 2026 M/S Qasmi Enterprises — PM Surya Ghar Yojna. Baghra, Muzaffarnagar.</div>
   <div class="footer-socials">
-    <a class="social-btn" href="tel:+918082347215" title="Call">📞</a>
-    <a class="social-btn" href="https://wa.me/918082347215" target="_blank" title="WhatsApp">💬</a>
+    <a class="social-btn" href="tel:+919760547652" title="Call">📞</a>
+    <a class="social-btn" href="https://wa.me/919760547652" target="_blank" title="WhatsApp">💬</a>
     <a class="social-btn" href="https://maps.google.com/?q=Bhartiya+State+Bank+Mandi+Road+Baghra+Muzaffarnagar" target="_blank" title="Location">📍</a>
   </div>
 </footer>
 
-<a href="https://wa.me/918082347215?text=Hi%2C%20I%20want%20a%20free%20solar%20quote%20for%20my%20home." target="_blank" class="wa-float" title="Chat on WhatsApp">💬</a>
+<a href="https://wa.me/919760547652?text=Hi%2C%20I%20want%20a%20free%20solar%20quote%20for%20my%20home." target="_blank" class="wa-float" title="Chat on WhatsApp">💬</a>
+<a href="#hero" class="top-btn" id="topBtn" title="Back to top">↑</a>
 
 <script>
 // MOBILE NAV
 function openMobileNav(){ document.getElementById('mobileNav').classList.add('open'); }
 function closeMobileNav(){ document.getElementById('mobileNav').classList.remove('open'); }
 
-// SCROLL FADE
-const observer = new IntersectionObserver((entries) => {
+// SCROLL FADE-UP REVEAL
+const revealObserver = new IntersectionObserver((entries) => {
   entries.forEach((e,i) => { if (e.isIntersecting) setTimeout(()=>e.target.classList.add('visible'), i*70); });
 }, { threshold: 0.12 });
-document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+document.querySelectorAll('.fade-up').forEach(el => revealObserver.observe(el));
 
-// NAV BG ON SCROLL
+// NAV BG ON SCROLL + BACK-TO-TOP VISIBILITY
+const navEl = document.querySelector('nav');
+const topBtn = document.getElementById('topBtn');
 window.addEventListener('scroll', () => {
-  document.querySelector('nav').style.background = window.scrollY > 40 ? 'rgba(7,19,36,0.94)' : 'rgba(7,19,36,0.7)';
+  navEl.style.background = window.scrollY > 40 ? 'rgba(7,19,36,0.94)' : 'rgba(7,19,36,0.7)';
+  topBtn.classList.toggle('show', window.scrollY > 600);
 });
 
-// FORM
+// ACTIVE NAV LINK ON SCROLL (scrollspy)
+const sections = document.querySelectorAll('section[id], #hero');
+const navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
+const sectionObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const id = entry.target.getAttribute('id');
+      navLinks.forEach(link => {
+        link.classList.toggle('active', link.getAttribute('href') === '#' + id);
+      });
+    }
+  });
+}, { rootMargin: '-45% 0px -50% 0px', threshold: 0 });
+sections.forEach(sec => sectionObserver.observe(sec));
+
+// ANIMATED STAT COUNTERS (hero + scheme numbers)
+function animateCount(el) {
+  const raw = el.textContent.trim();
+  const match = raw.match(/^(\d+)(.*)$/);
+  if (!match) return;
+  const target = parseInt(match[1], 10);
+  const suffix = match[2];
+  let current = 0;
+  const duration = 1200;
+  const stepTime = Math.max(Math.floor(duration / target), 20);
+  el.textContent = '0' + suffix;
+  const timer = setInterval(() => {
+    current += Math.ceil(target / (duration / stepTime));
+    if (current >= target) { current = target; clearInterval(timer); }
+    el.textContent = current + suffix;
+  }, stepTime);
+}
+const statObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const numEl = entry.target.querySelector('.stat-num') || entry.target;
+      if (numEl && !numEl.dataset.counted) {
+        numEl.dataset.counted = 'true';
+        const span = numEl.querySelector('span');
+        const suffixText = span ? span.textContent : '';
+        const numberOnly = numEl.textContent.replace(suffixText, '').trim();
+        let n = 0;
+        const target = parseInt(numberOnly, 10);
+        if (!isNaN(target)) {
+          const duration = 1100;
+          const steps = 30;
+          const inc = target / steps;
+          const timer = setInterval(() => {
+            n += inc;
+            if (n >= target) { n = target; clearInterval(timer); }
+            numEl.childNodes[0].nodeValue = Math.floor(n) + '';
+          }, duration / steps);
+        }
+      }
+      statObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.4 });
+document.querySelectorAll('.stat-item, .unit-card').forEach(el => statObserver.observe(el));
+
+// CONTACT FORM — validation + submit feedback
 function handleSubmit(e){
   e.preventDefault();
-  const btn = e.target.querySelector('button[type=submit]');
+  const form = e.target;
+  const btn = form.querySelector('button[type=submit]');
+  const nameInput = form.querySelector('input[type=text]');
+  const phoneInput = form.querySelectorAll('input[type=text]')[1];
+  let valid = true;
+
+  [nameInput, phoneInput].forEach(input => {
+    if (input && input.value.trim() === '') {
+      input.classList.add('error');
+      valid = false;
+    } else if (input) {
+      input.classList.remove('error');
+    }
+  });
+
+  if (!valid) {
+    btn.textContent = 'Please fill required fields';
+    btn.style.background = '#ff5c5c';
+    setTimeout(() => { btn.textContent = 'Request Free Site Visit ✦'; btn.style.background = ''; }, 2200);
+    return;
+  }
+
   const original = btn.textContent;
   btn.textContent = '✓ Request Sent!';
   btn.style.background = '#2fd47a';
-  setTimeout(() => { btn.textContent = original; btn.style.background = ''; e.target.reset(); }, 2800);
+  btn.disabled = true;
+  setTimeout(() => {
+    btn.textContent = original;
+    btn.style.background = '';
+    btn.disabled = false;
+    form.reset();
+  }, 2800);
 }
+
+// Clear error state as user types
+document.querySelectorAll('.contact-form input, .contact-form textarea').forEach(el => {
+  el.addEventListener('input', () => el.classList.remove('error'));
+});
+
+// MOBILE NAV — close on outside click
+document.getElementById('mobileNav').addEventListener('click', (e) => {
+  if (e.target.id === 'mobileNav') closeMobileNav();
+});
+
+// Close mobile nav with Escape key
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') closeMobileNav();
+});
 </script>
 </body>
 </html>
