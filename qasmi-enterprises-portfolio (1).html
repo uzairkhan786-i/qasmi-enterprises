@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>M/s Qasmi Enterprises — PM Surya Ghar Yojna | Rooftop Solar, Muzaffarnagar</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600&family=Noto+Sans+Devanagari:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy: #071324;
+  --navy2: #0c1d34;
+  --card: #0f2340;
+  --border: rgba(255,255,255,0.09);
+  --gold: #f6b93b;
+  --gold-deep: #e0930f;
+  --green: #2fd47a;
+  --sky: #4fa8e6;
+  --white: #f8f9fb;
+  --muted: #93a1b8;
+  --text: #cdd6e4;
+}
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--navy);
+  color: var(--text);
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  line-height: 1.65;
+  overflow-x: hidden;
+}
+.hi { font-family: 'Noto Sans Devanagari', sans-serif; }
+img { max-width: 100%; display: block; }
+a { color: inherit; }
+
+/* ===== BACKGROUND PANEL-GRID TEXTURE ===== */
+.panel-texture {
+  background-image:
+    linear-gradient(rgba(79,168,230,0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(79,168,230,0.05) 1px, transparent 1px);
+  background-size: 46px 46px;
+}
+
+/* ===== NAV ===== */
+nav { position: fixed; top: 0; left: 0; right: 0; z-index: 200; padding: 16px 60px; display: flex; align-items: center; justify-content: space-between; background: rgba(7,19,36,0.7); backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); transition: background 0.3s; }
+.nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.nav-logo .mark { width: 38px; height: 38px; }
+.nav-logo .txt { font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 18px; color: var(--white); letter-spacing: -0.01em; line-height: 1.15; }
+.nav-logo .txt small { display: block; font-family: 'Inter', sans-serif; font-weight: 500; font-size: 10.5px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); }
+.nav-links { display: flex; align-items: center; gap: 34px; list-style: none; }
+.nav-links a { text-decoration: none; color: var(--muted); font-size: 13.5px; font-weight: 500; letter-spacing: 0.02em; transition: color 0.2s; }
+.nav-links a:hover { color: var(--white); }
+.nav-cta { background: var(--gold); color: #1a1204 !important; padding: 10px 20px; border-radius: 8px; font-weight: 600; }
+.nav-cta:hover { background: #ffc65c; }
+.nav-toggle { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+.nav-toggle span { display: block; width: 24px; height: 2px; background: var(--white); border-radius: 2px; }
+
+.mobile-nav { position: fixed; inset: 0; background: var(--navy); z-index: 300; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 28px; transform: translateY(-100%); transition: transform 0.4s ease; }
+.mobile-nav.open { transform: translateY(0); }
+.mobile-nav a { text-decoration: none; color: var(--white); font-family: 'Poppins', sans-serif; font-size: 22px; font-weight: 600; }
+.mobile-close { position: absolute; top: 26px; right: 30px; font-size: 26px; color: var(--muted); cursor: pointer; }
+
+/* ===== HERO ===== */
+#hero { position: relative; min-height: 100vh; display: flex; align-items: center; overflow: hidden; padding: 150px 60px 90px; }
+.hero-bg { position: absolute; inset: 0; z-index: 0; background:
+  radial-gradient(760px 560px at 82% 10%, rgba(246,185,59,0.16), transparent 62%),
+  radial-gradient(900px 700px at 10% 100%, rgba(47,212,122,0.10), transparent 60%),
+  linear-gradient(180deg, #081729 0%, #071324 60%); }
+.hero-bg.panel-texture { z-index: 1; opacity: 0.7; }
+
+/* Signature: rising sun arc behind rooftop illustration */
+.sun-rig { position: absolute; right: -60px; top: 90px; width: 620px; height: 620px; z-index: 1; pointer-events: none; }
+.sun-core { position: absolute; left: 50%; top: 46%; width: 150px; height: 150px; transform: translate(-50%,-50%); border-radius: 50%; background: radial-gradient(circle at 35% 30%, #fff3d0, var(--gold) 55%, var(--gold-deep) 100%); box-shadow: 0 0 90px 20px rgba(246,185,59,0.35); animation: sunPulse 5s ease-in-out infinite; }
+@keyframes sunPulse { 0%,100%{ box-shadow: 0 0 90px 20px rgba(246,185,59,0.30);} 50%{ box-shadow: 0 0 130px 34px rgba(246,185,59,0.48);} }
+.sun-ray { position: absolute; left: 50%; top: 46%; width: 2px; height: 300px; background: linear-gradient(to bottom, rgba(246,185,59,0.55), transparent 70%); transform-origin: top center; animation: rayspin 60s linear infinite; }
+@keyframes rayspin { from { transform: translate(-50%,0) rotate(0deg);} to { transform: translate(-50%,0) rotate(360deg);} }
+.arc-ring { position: absolute; left: 50%; top: 46%; border: 1px dashed rgba(246,185,59,0.25); border-radius: 50%; transform: translate(-50%,-50%); }
+
+.hero-content { position: relative; z-index: 3; max-width: 700px; }
+.hero-badge { display: inline-flex; align-items: center; gap: 9px; background: rgba(47,212,122,0.12); border: 1px solid rgba(47,212,122,0.35); padding: 8px 16px; border-radius: 100px; font-size: 12.5px; font-weight: 600; letter-spacing: 0.04em; color: var(--green); margin-bottom: 28px; }
+.badge-dot { width: 7px; height: 7px; background: var(--green); border-radius: 50%; animation: blink 1.6s infinite; }
+@keyframes blink { 0%,100%{opacity:1}50%{opacity:0.25} }
+.hero-title { font-family: 'Poppins', sans-serif; font-size: clamp(36px, 5vw, 60px); font-weight: 800; line-height: 1.12; letter-spacing: -0.02em; color: var(--white); margin-bottom: 20px; }
+.hero-title .accent { color: var(--gold); }
+.hero-title-hi { font-family: 'Noto Sans Devanagari', sans-serif; font-weight: 700; font-size: clamp(20px, 2.4vw, 27px); color: var(--sky); margin-bottom: 22px; }
+.hero-sub { font-size: 16.5px; color: var(--muted); max-width: 540px; margin-bottom: 38px; }
+.hero-btns { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 54px; }
+.btn-primary { display: inline-flex; align-items: center; gap: 9px; background: var(--gold); color: #1a1204; text-decoration: none; padding: 15px 28px; border-radius: 9px; font-family: 'Poppins', sans-serif; font-weight: 600; font-size: 14.5px; transition: all 0.22s; }
+.btn-primary:hover { background: #ffc65c; transform: translateY(-2px); box-shadow: 0 14px 34px rgba(246,185,59,0.28); }
+.btn-whatsapp { display: inline-flex; align-items: center; gap: 9px; background: #25d366; color: #fff; text-decoration: none; padding: 15px 28px; border-radius: 9px; font-family: 'Poppins', sans-serif; font-weight: 600; font-size: 14.5px; transition: all 0.22s; }
+.btn-whatsapp:hover { background: #1fbd5a; transform: translateY(-2px); box-shadow: 0 14px 34px rgba(37,211,102,0.25); }
+.btn-ghost { display: inline-flex; align-items: center; gap: 9px; background: transparent; color: var(--white); text-decoration: none; padding: 14px 26px; border-radius: 9px; font-family: 'Poppins', sans-serif; font-weight: 600; font-size: 14.5px; border: 1px solid var(--border); transition: all 0.22s; }
+.btn-ghost:hover { border-color: rgba(255,255,255,0.3); background: rgba(255,255,255,0.04); }
+
+.hero-stats { position: relative; z-index: 3; display: flex; gap: 44px; flex-wrap: wrap; }
+.stat-item { display: flex; flex-direction: column; }
+.stat-num { font-family: 'Poppins', sans-serif; font-size: 28px; font-weight: 700; color: var(--white); }
+.stat-num span { color: var(--gold); }
+.stat-label { font-size: 12px; color: var(--muted); letter-spacing: 0.03em; margin-top: 2px; }
+
+.fade-up { opacity: 0; transform: translateY(36px); transition: all 0.7s ease; }
+.fade-up.visible { opacity: 1; transform: translateY(0); }
+
+/* ===== SECTION COMMONS ===== */
+section { padding: 108px 60px; position: relative; }
+.section-tag { font-size: 12px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 14px; display: flex; align-items: center; gap: 10px; }
+.section-tag::before { content: ''; display: block; width: 26px; height: 2px; background: var(--gold); border-radius: 2px; }
+.section-title { font-family: 'Poppins', sans-serif; font-size: clamp(28px, 3.4vw, 42px); font-weight: 700; color: var(--white); line-height: 1.15; letter-spacing: -0.015em; margin-bottom: 14px; }
+.section-sub { color: var(--muted); font-size: 16px; max-width: 540px; }
+.section-head { margin-bottom: 52px; }
+
+/* ===== SCHEME BANNER ===== */
+#scheme { background: linear-gradient(120deg, #10240e 0%, #0c1d34 55%); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.scheme-wrap { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 60px; align-items: center; }
+.scheme-badge { display: inline-block; background: rgba(246,185,59,0.13); border: 1px solid rgba(246,185,59,0.35); color: var(--gold); font-weight: 700; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; padding: 7px 14px; border-radius: 100px; margin-bottom: 18px; }
+.scheme-title { font-family: 'Poppins', sans-serif; font-size: clamp(26px,3vw,36px); font-weight: 700; color: var(--white); margin-bottom: 16px; line-height: 1.2; }
+.scheme-title span { color: var(--green); }
+.scheme-text { color: var(--muted); font-size: 15.5px; margin-bottom: 26px; }
+.scheme-points { list-style: none; display: flex; flex-direction: column; gap: 14px; }
+.scheme-points li { display: flex; align-items: flex-start; gap: 12px; font-size: 14.5px; color: var(--text); }
+.scheme-points .tick { flex-shrink: 0; width: 22px; height: 22px; border-radius: 50%; background: rgba(47,212,122,0.15); color: var(--green); display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 800; margin-top: 1px; }
+.scheme-visual { background: var(--card); border: 1px solid var(--border); border-radius: 20px; padding: 34px; }
+.unit-card { text-align: center; padding: 26px 10px; border-radius: 14px; background: linear-gradient(160deg, rgba(246,185,59,0.1), transparent); border: 1px solid rgba(246,185,59,0.25); margin-bottom: 20px; }
+.unit-num { font-family: 'Poppins', sans-serif; font-size: 46px; font-weight: 800; color: var(--gold); letter-spacing: -0.02em; }
+.unit-label { font-size: 13px; color: var(--muted); margin-top: 4px; }
+.mini-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.mini-stat { background: var(--navy2); border: 1px solid var(--border); border-radius: 12px; padding: 16px; }
+.mini-stat .n { font-family: 'Poppins', sans-serif; font-size: 20px; font-weight: 700; color: var(--white); }
+.mini-stat .l { font-size: 11.5px; color: var(--muted); margin-top: 2px; }
+
+/* ===== SERVICES ===== */
+#services { background: var(--navy); }
+.services-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+.service-card { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 30px 24px; transition: all 0.3s; position: relative; overflow: hidden; }
+.service-card::before { content: ''; position: absolute; inset: 0; background: linear-gradient(135deg, rgba(246,185,59,0.08), transparent); opacity: 0; transition: opacity 0.3s; }
+.service-card:hover { border-color: rgba(246,185,59,0.3); transform: translateY(-4px); }
+.service-card:hover::before { opacity: 1; }
+.service-icon { width: 48px; height: 48px; border-radius: 12px; background: rgba(246,185,59,0.12); display: flex; align-items: center; justify-content: center; font-size: 22px; margin-bottom: 20px; }
+.service-name { font-family: 'Poppins', sans-serif; font-size: 16.5px; font-weight: 600; color: var(--white); margin-bottom: 9px; }
+.service-desc { font-size: 13.7px; color: var(--muted); line-height: 1.6; }
+
+/* ===== PROCESS ===== */
+#process { background: var(--navy2); }
+.process-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; position: relative; }
+.process-step { position: relative; padding: 0 22px; }
+.process-step:not(:last-child)::after { content: ''; position: absolute; top: 27px; right: -6px; width: calc(100% - 30px); height: 1px; background: repeating-linear-gradient(to right, rgba(246,185,59,0.4) 0 6px, transparent 6px 12px); }
+.step-num { font-family: 'Poppins', sans-serif; font-size: 13px; font-weight: 700; color: var(--gold); width: 54px; height: 54px; border-radius: 50%; border: 1.5px solid rgba(246,185,59,0.4); display: flex; align-items: center; justify-content: center; margin-bottom: 22px; background: var(--navy2); position: relative; z-index: 2; }
+.step-title { font-family: 'Poppins', sans-serif; font-size: 16px; font-weight: 600; color: var(--white); margin-bottom: 8px; }
+.step-desc { font-size: 13.5px; color: var(--muted); line-height: 1.6; }
+
+/* ===== WHY US ===== */
+#why { background: var(--navy); display: grid; grid-template-columns: 0.95fr 1.05fr; gap: 70px; align-items: center; }
+.why-visual { position: relative; aspect-ratio: 4/5; border-radius: 22px; overflow: hidden; border: 1px solid var(--border); background: linear-gradient(165deg, #0e2038, #081527); }
+.house-illustration { position: absolute; inset: 0; }
+.why-badge { position: absolute; bottom: -18px; left: -18px; background: var(--green); color: #05270f; padding: 18px 22px; border-radius: 14px; font-family: 'Poppins', sans-serif; font-weight: 700; text-align: center; box-shadow: 0 18px 40px rgba(47,212,122,0.28); }
+.why-badge .big { font-size: 30px; display: block; line-height: 1; }
+.why-badge .small { font-size: 11px; opacity: 0.85; font-weight: 600; }
+.why-list { list-style: none; display: flex; flex-direction: column; gap: 18px; margin-top: 30px; }
+.why-list li { display: flex; align-items: flex-start; gap: 14px; }
+.why-ico { flex-shrink: 0; width: 34px; height: 34px; border-radius: 9px; background: rgba(79,168,230,0.14); color: var(--sky); display: flex; align-items: center; justify-content: center; font-size: 15px; }
+.why-list h4 { font-family: 'Poppins', sans-serif; font-size: 15px; font-weight: 600; color: var(--white); margin-bottom: 3px; }
+.why-list p { font-size: 13.5px; color: var(--muted); }
+
+/* ===== TEAM ===== */
+#team { background: var(--navy2); }
+.team-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.team-card { background: var(--card); border: 1px solid var(--border); border-radius: 18px; padding: 32px 26px; text-align: center; transition: all 0.3s; }
+.team-card:hover { border-color: rgba(246,185,59,0.3); transform: translateY(-4px); }
+.team-avatar { width: 68px; height: 68px; border-radius: 50%; background: linear-gradient(135deg, var(--gold), var(--sky)); display: flex; align-items: center; justify-content: center; font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 22px; color: #10151f; margin: 0 auto 18px; }
+.team-name { font-family: 'Poppins', sans-serif; font-size: 17px; font-weight: 600; color: var(--white); margin-bottom: 3px; }
+.team-role { font-size: 12.5px; color: var(--gold); letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 20px; }
+.team-actions { display: flex; gap: 10px; justify-content: center; }
+.team-btn { display: inline-flex; align-items: center; gap: 6px; font-size: 12.5px; font-weight: 600; padding: 9px 14px; border-radius: 8px; text-decoration: none; }
+.team-btn.call { background: rgba(79,168,230,0.14); color: var(--sky); }
+.team-btn.wa { background: rgba(37,211,102,0.14); color: #3ddc80; }
+.team-btn:hover { filter: brightness(1.2); }
+
+/* ===== CTA BAND ===== */
+#cta-band { background: linear-gradient(120deg, #14260f, #0c1d34); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 84px 60px; text-align: center; }
+.cta-title { font-family: 'Poppins', sans-serif; font-size: clamp(28px,4vw,46px); font-weight: 800; color: var(--white); letter-spacing: -0.02em; margin-bottom: 14px; }
+.cta-title span { color: var(--gold); }
+.cta-title-hi { font-family: 'Noto Sans Devanagari', sans-serif; font-weight: 700; color: var(--sky); font-size: clamp(17px, 2vw, 22px); margin-bottom: 34px; }
+.cta-btns { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+
+/* ===== CONTACT ===== */
+#contact { background: var(--navy); }
+.contact-wrap { display: grid; grid-template-columns: 1fr 1.05fr; gap: 60px; }
+.contact-item { display: flex; align-items: center; gap: 16px; background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 20px 22px; text-decoration: none; color: var(--text); transition: all 0.25s; margin-bottom: 14px; }
+.contact-item:hover { border-color: rgba(246,185,59,0.3); transform: translateX(4px); color: var(--white); }
+.contact-icon { font-size: 20px; width: 44px; height: 44px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; background: rgba(246,185,59,0.1); border-radius: 10px; }
+.contact-label { font-size: 11.5px; color: var(--muted); letter-spacing: 0.05em; }
+.contact-val { font-size: 14.5px; color: var(--white); font-weight: 500; }
+.contact-form { background: var(--card); border: 1px solid var(--border); border-radius: 18px; padding: 32px; display: flex; flex-direction: column; gap: 16px; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.form-group { display: flex; flex-direction: column; gap: 7px; }
+.form-group label { font-size: 12px; letter-spacing: 0.05em; text-transform: uppercase; color: var(--muted); }
+.form-group input, .form-group select, .form-group textarea { background: var(--navy2); border: 1px solid var(--border); border-radius: 9px; padding: 12px 14px; color: var(--white); font-family: 'Inter', sans-serif; font-size: 14.5px; outline: none; transition: border-color 0.2s; }
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--gold); }
+.form-group textarea { resize: vertical; min-height: 90px; }
+.submit-btn { background: var(--gold); color: #1a1204; border: none; padding: 15px; border-radius: 9px; font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 14.5px; cursor: pointer; transition: all 0.22s; }
+.submit-btn:hover { background: #ffc65c; }
+
+/* ===== FOOTER ===== */
+footer { padding: 40px 60px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; border-top: 1px solid var(--border); background: var(--navy2); }
+.footer-logo { font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 16px; color: var(--white); }
+.footer-logo span { color: var(--gold); }
+.footer-copy { font-size: 12.5px; color: var(--muted); }
+.footer-socials { display: flex; gap: 10px; }
+.social-btn { width: 38px; height: 38px; border-radius: 9px; background: var(--card); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; font-size: 16px; text-decoration: none; transition: all 0.2s; }
+.social-btn:hover { border-color: rgba(246,185,59,0.4); transform: translateY(-2px); }
+
+/* WhatsApp floating button */
+.wa-float { position: fixed; bottom: 24px; right: 24px; z-index: 400; width: 58px; height: 58px; border-radius: 50%; background: #25d366; display: flex; align-items: center; justify-content: center; font-size: 26px; text-decoration: none; box-shadow: 0 10px 30px rgba(37,211,102,0.4); animation: floatPulse 2.4s ease-in-out infinite; }
+@keyframes floatPulse { 0%,100%{ transform: scale(1);} 50%{ transform: scale(1.07);} }
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1080px) {
+  .services-grid { grid-template-columns: repeat(2,1fr); }
+  .process-grid { grid-template-columns: repeat(2,1fr); row-gap: 40px; }
+  .process-step:nth-child(2)::after { display:none; }
+  .team-grid { grid-template-columns: 1fr; }
+  .scheme-wrap, #why, .contact-wrap { grid-template-columns: 1fr; }
+  .why-visual { max-width: 420px; margin: 0 auto; }
+}
+@media (max-width: 780px) {
+  nav { padding: 16px 24px; }
+  .nav-links { display: none; }
+  .nav-toggle { display: flex; }
+  section { padding: 80px 24px; }
+  #hero { padding: 130px 24px 60px; }
+  .sun-rig { opacity: 0.5; right: -160px; top: 40px; }
+  .services-grid { grid-template-columns: 1fr; }
+  .form-row { grid-template-columns: 1fr; }
+  .hero-stats { gap: 26px; }
+  footer { flex-direction: column; text-align: center; }
+}
+</style>
+</head>
+<body>
+
+<!-- MOBILE NAV -->
+<div class="mobile-nav" id="mobileNav">
+  <span class="mobile-close" onclick="closeMobileNav()">✕</span>
+  <a href="#hero" onclick="closeMobileNav()">Home</a>
+  <a href="#scheme" onclick="closeMobileNav()">Yojna</a>
+  <a href="#services" onclick="closeMobileNav()">Services</a>
+  <a href="#why" onclick="closeMobileNav()">Why Us</a>
+  <a href="#team" onclick="closeMobileNav()">Team</a>
+  <a href="#contact" onclick="closeMobileNav()">Contact</a>
+</div>
+
+<!-- NAV -->
+<nav>
+  <a href="#hero" class="nav-logo">
+    <svg class="mark" viewBox="0 0 40 40" fill="none">
+      <circle cx="14" cy="12" r="6.5" fill="#f6b93b"/>
+      <path d="M17 20 L37 20 L33 34 L9 34 Z" fill="#4fa8e6" stroke="#0c1d34" stroke-width="1"/>
+      <line x1="17" y1="20" x2="13" y2="34" stroke="#0c1d34" stroke-width="1"/>
+      <line x1="27" y1="20" x2="25" y2="34" stroke="#0c1d34" stroke-width="1"/>
+      <line x1="20.5" y1="24" x2="34" y2="24" stroke="#0c1d34" stroke-width="1"/>
+      <line x1="19" y1="29" x2="32.3" y2="29" stroke="#0c1d34" stroke-width="1"/>
+    </svg>
+    <div class="txt">Qasmi Enterprises<small>PM Surya Ghar Yojna</small></div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#hero">Home</a></li>
+    <li><a href="#scheme">Yojna</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#why">Why Us</a></li>
+    <li><a href="#team">Team</a></li>
+    <li><a href="#contact" class="nav-cta">Get Free Quote</a></li>
+  </ul>
+  <div class="nav-toggle" onclick="openMobileNav()"><span></span><span></span><span></span></div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-bg panel-texture"></div>
+  <div class="sun-rig">
+    <div class="arc-ring" style="width:520px;height:520px;"></div>
+    <div class="arc-ring" style="width:400px;height:400px;"></div>
+    <div class="sun-ray" style="animation-delay:0s;"></div>
+    <div class="sun-ray" style="transform:translate(-50%,0) rotate(45deg); animation-delay:-10s;"></div>
+    <div class="sun-ray" style="transform:translate(-50%,0) rotate(90deg); animation-delay:-20s;"></div>
+    <div class="sun-ray" style="transform:translate(-50%,0) rotate(135deg); animation-delay:-30s;"></div>
+    <div class="sun-core"></div>
+  </div>
+
+  <div class="hero-content">
+    <div class="hero-badge"><span class="badge-dot"></span> Govt. Subsidy Assistance Available</div>
+    <h1 class="hero-title">Go Solar. Cut Your<br><span class="accent">Electricity Bill</span> to Zero.</h1>
+    <p class="hero-title-hi hi">सौर ऊर्जा अपनाएं, बिजली बिल से छुटकारा पाएं</p>
+    <p class="hero-sub">M/s Qasmi Enterprises brings PM Surya Ghar Muft Bijli Yojna to your rooftop — full solar design, installation, and easy bank loan support, all from your local team in Baghra, Muzaffarnagar.</p>
+    <div class="hero-btns">
+      <a href="https://wa.me/918082347215?text=Hi%2C%20I%20want%20a%20free%20solar%20quote%20for%20my%20home." class="btn-whatsapp" target="_blank">💬 Chat on WhatsApp</a>
+      <a href="tel:+918082347215" class="btn-primary">📞 Call for Free Site Visit</a>
+      <a href="#scheme" class="btn-ghost">Learn About the Yojna ↓</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-item"><div class="stat-num">300<span>+</span></div><div class="stat-label">Units Free Monthly*</div></div>
+      <div class="stat-item"><div class="stat-num">3<span>+</span></div><div class="stat-label">Local Experts</div></div>
+      <div class="stat-item"><div class="stat-num">100<span>%</span></div><div class="stat-label">Loan Assistance</div></div>
+      <div class="stat-item"><div class="stat-num">25<span>yr</span></div><div class="stat-label">Panel Life</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- SCHEME -->
+<section id="scheme" class="panel-texture">
+  <div class="scheme-wrap">
+    <div class="fade-up">
+      <div class="scheme-badge">PM Surya Ghar Muft Bijli Yojna</div>
+      <h2 class="scheme-title">Free rooftop solar,<br>backed by <span>government subsidy.</span></h2>
+      <p class="scheme-text">Under the central government's rooftop solar scheme, eligible households can get their system subsidised and repay any remaining cost through easy bank EMIs — arranged directly by our team, from paperwork to net metering.</p>
+      <ul class="scheme-points">
+        <li><span class="tick">✓</span> Central subsidy applied directly to your installation cost</li>
+        <li><span class="tick">✓</span> Sabhi banko se loan ki suvidha — easy EMI options for the balance amount</li>
+        <li><span class="tick">✓</span> End-to-end help with scheme registration and net metering approval</li>
+        <li><span class="tick">✓</span> Locally installed and serviced — no waiting on distant call centres</li>
+      </ul>
+    </div>
+    <div class="scheme-visual fade-up">
+      <div class="unit-card">
+        <div class="unit-num">300 <span style="font-size:22px;">units</span></div>
+        <div class="unit-label hi">प्रति माह मुफ्त बिजली — स्कीम के तहत</div>
+      </div>
+      <div class="mini-grid">
+        <div class="mini-stat"><div class="n">Sabhi Banks</div><div class="l">Loan Facility</div></div>
+        <div class="mini-stat"><div class="n">Free</div><div class="l">Site Survey</div></div>
+        <div class="mini-stat"><div class="n">Full</div><div class="l">Installation & AMC</div></div>
+        <div class="mini-stat"><div class="n">On-site</div><div class="l">Paperwork Support</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="section-head fade-up">
+    <div class="section-tag">Our Services</div>
+    <h2 class="section-title">Everything for your<br>solar rooftop, in one place.</h2>
+    <p class="section-sub">From free consultation to after-sales maintenance — we handle the full journey.</p>
+  </div>
+  <div class="services-grid">
+    <div class="service-card fade-up">
+      <div class="service-icon">☀️</div>
+      <div class="service-name">PM Surya Ghar Muft Bijli Yojna</div>
+      <div class="service-desc">Rooftop solar systems installed under the government's free-electricity scheme, with subsidy paperwork handled for you.</div>
+    </div>
+    <div class="service-card fade-up">
+      <div class="service-icon">🏦</div>
+      <div class="service-name">Sabhi Banko se Loan ki Suvidha</div>
+      <div class="service-desc">Easy EMI options arranged across all major banks, so upfront cost is never a barrier to going solar.</div>
+    </div>
+    <div class="service-card fade-up">
+      <div class="service-icon">🛠️</div>
+      <div class="service-name">Design, Installation & Maintenance</div>
+      <div class="service-desc">Custom solar system design for your roof, professional installation, and ongoing maintenance support.</div>
+    </div>
+    <div class="service-card fade-up">
+      <div class="service-icon">🏠</div>
+      <div class="service-name">Ghar ko Banayein Urja Sashakt</div>
+      <div class="service-desc">Make your home energy self-sufficient — clean power, lower bills, and a smaller carbon footprint.</div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section id="process">
+  <div class="section-head fade-up">
+    <div class="section-tag">How It Works</div>
+    <h2 class="section-title">Four steps to your own solar rooftop</h2>
+  </div>
+  <div class="process-grid">
+    <div class="process-step fade-up">
+      <div class="step-num">01</div>
+      <div class="step-title">Free Site Visit</div>
+      <div class="step-desc">Our team inspects your roof and electricity usage to design the right system size.</div>
+    </div>
+    <div class="process-step fade-up">
+      <div class="step-num">02</div>
+      <div class="step-title">Subsidy & Loan Setup</div>
+      <div class="step-desc">We handle your PM Surya Ghar Yojna application and connect you with a bank for easy EMI.</div>
+    </div>
+    <div class="process-step fade-up">
+      <div class="step-num">03</div>
+      <div class="step-title">Installation</div>
+      <div class="step-desc">Certified installers fit your rooftop panels and inverter with minimal disruption.</div>
+    </div>
+    <div class="process-step fade-up">
+      <div class="step-num">04</div>
+      <div class="step-title">Net Metering & Savings</div>
+      <div class="step-desc">Net meter approval is completed and your electricity bills start dropping from day one.</div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section id="why">
+  <div class="why-visual fade-up">
+    <svg viewBox="0 0 400 500" style="width:100%;height:100%;" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#0e2038"/>
+          <stop offset="100%" stop-color="#081527"/>
+        </linearGradient>
+      </defs>
+      <rect width="400" height="500" fill="url(#sky)"/>
+      <circle cx="320" cy="90" r="42" fill="#f6b93b" opacity="0.9"/>
+      <circle cx="320" cy="90" r="66" fill="none" stroke="#f6b93b" stroke-opacity="0.25" stroke-width="1"/>
+      <path d="M60 330 L200 220 L340 330 Z" fill="#123057"/>
+      <rect x="80" y="330" width="240" height="130" fill="#0f2847"/>
+      <g>
+        <rect x="95" y="245" width="200" height="76" rx="4" fill="#1a3a63" stroke="#4fa8e6" stroke-width="1.5"/>
+        <line x1="145" y1="245" x2="145" y2="321" stroke="#4fa8e6" stroke-width="1"/>
+        <line x1="195" y1="245" x2="195" y2="321" stroke="#4fa8e6" stroke-width="1"/>
+        <line x1="245" y1="245" x2="245" y2="321" stroke="#4fa8e6" stroke-width="1"/>
+        <line x1="95" y1="283" x2="295" y2="283" stroke="#4fa8e6" stroke-width="1"/>
+      </g>
+      <rect x="140" y="380" width="60" height="80" fill="#0a1d33"/>
+      <rect x="230" y="360" width="40" height="40" fill="#173e68" stroke="#2fd47a" stroke-width="1"/>
+      <path d="M105 330 L200 250 L295 330" fill="none" stroke="#f6b93b" stroke-width="1.5" stroke-opacity="0.5"/>
+    </svg>
+    <div class="why-badge"><span class="big">Local</span><span class="small">Muzaffarnagar Team</span></div>
+  </div>
+  <div class="fade-up">
+    <div class="section-tag">Why Qasmi Enterprises</div>
+    <h2 class="section-title">Your neighbourhood solar experts, not a call centre.</h2>
+    <p class="section-sub">Based near Bhartiya State Bank on Mandi Road, Baghra — we're close by for site visits, installation, and every follow-up after.</p>
+    <ul class="why-list">
+      <li>
+        <div class="why-ico">📍</div>
+        <div><h4>Local Presence, Real Accountability</h4><p>Based in Baghra, Muzaffarnagar — reachable for service long after installation.</p></div>
+      </li>
+      <li>
+        <div class="why-ico">💰</div>
+        <div><h4>Loan Support at Every Bank</h4><p>We coordinate financing so the subsidy-adjusted cost fits your budget on EMI.</p></div>
+      </li>
+      <li>
+        <div class="why-ico">🔧</div>
+        <div><h4>Design to Maintenance</h4><p>One team handles system sizing, installation, and ongoing upkeep — no third parties.</p></div>
+      </li>
+      <li>
+        <div class="why-ico">🌱</div>
+        <div><h4>Clean Energy, Better Tomorrow</h4><p>Lower your household's carbon footprint while cutting your monthly electricity bill.</p></div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section id="team">
+  <div class="section-head fade-up">
+    <div class="section-tag">Talk To Us</div>
+    <h2 class="section-title">Meet the team behind your solar rooftop</h2>
+    <p class="section-sub">Call or WhatsApp directly — no forms, no waiting.</p>
+  </div>
+  <div class="team-grid">
+    <div class="team-card fade-up">
+      <div class="team-avatar">MP</div>
+      <div class="team-name">M. Parvez</div>
+      <div class="team-role">Consultant</div>
+      <div class="team-actions">
+        <a href="tel:+918082347215" class="team-btn call">📞 8082347215</a>
+        <a href="https://wa.me/918082347215" target="_blank" class="team-btn wa">💬 WhatsApp</a>
+      </div>
+    </div>
+    <div class="team-card fade-up">
+      <div class="team-avatar">MS</div>
+      <div class="team-name">M. Shakib</div>
+      <div class="team-role">Consultant</div>
+      <div class="team-actions">
+        <a href="tel:+919760547652" class="team-btn call">📞 9760547652</a>
+        <a href="https://wa.me/919760547652" target="_blank" class="team-btn wa">💬 WhatsApp</a>
+      </div>
+    </div>
+    <div class="team-card fade-up">
+      <div class="team-avatar">ZQ</div>
+      <div class="team-name">Ziaulhaq Qasmi</div>
+      <div class="team-role">Consultant</div>
+      <div class="team-actions">
+        <a href="tel:+919456026111" class="team-btn call">📞 9456026111</a>
+        <a href="https://wa.me/919456026111" target="_blank" class="team-btn wa">💬 WhatsApp</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BAND -->
+<section id="cta-band">
+  <h2 class="cta-title">Ready to <span>go solar?</span></h2>
+  <p class="cta-title-hi hi">आज ही मुफ्त साइट विज़िट बुक करें</p>
+  <div class="cta-btns">
+    <a href="https://wa.me/918082347215?text=Hi%2C%20I%20want%20a%20free%20solar%20quote%20for%20my%20home." class="btn-whatsapp" target="_blank">💬 Chat on WhatsApp Now</a>
+    <a href="tel:+918082347215" class="btn-primary">📞 Call Us Now</a>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-head fade-up">
+    <div class="section-tag">Get In Touch</div>
+    <h2 class="section-title">Book your free site visit</h2>
+    <p class="section-sub">Tell us about your rooftop and current bill — we'll get back with a plan.</p>
+  </div>
+  <div class="contact-wrap">
+    <div class="fade-up">
+      <a href="https://maps.google.com/?q=Bhartiya+State+Bank+Mandi+Road+Baghra+Muzaffarnagar" target="_blank" class="contact-item">
+        <div class="contact-icon">📍</div>
+        <div><div class="contact-label">Address</div><div class="contact-val">Near Bhartiye State Bank, Mandi Road, Baghra, Muzaffarnagar</div></div>
+      </a>
+      <a href="tel:+918082347215" class="contact-item">
+        <div class="contact-icon">📞</div>
+        <div><div class="contact-label">Call</div><div class="contact-val">M. Parvez — 8082347215</div></div>
+      </a>
+      <a href="tel:+919760547652" class="contact-item">
+        <div class="contact-icon">📞</div>
+        <div><div class="contact-label">Call</div><div class="contact-val">M. Shakib — 9760547652</div></div>
+      </a>
+      <a href="tel:+919456026111" class="contact-item">
+        <div class="contact-icon">📞</div>
+        <div><div class="contact-label">Call</div><div class="contact-val">Ziaulhaq Qasmi — 9456026111</div></div>
+      </a>
+      <a href="https://wa.me/918082347215?text=Hi%2C%20I%20want%20a%20free%20solar%20quote%20for%20my%20home." target="_blank" class="btn-whatsapp" style="justify-content:center;margin-top:8px;">💬 Chat on WhatsApp Now</a>
+    </div>
+
+    <form class="contact-form fade-up" onsubmit="handleSubmit(event)">
+      <div class="form-row">
+        <div class="form-group"><label>Your Name</label><input type="text" placeholder="Your name" required></div>
+        <div class="form-group"><label>Mobile / WhatsApp</label><input type="text" placeholder="+91 XXXXX XXXXX" required></div>
+      </div>
+      <div class="form-group"><label>Service Needed</label>
+        <select>
+          <option>PM Surya Ghar Muft Bijli Yojna</option>
+          <option>Bank Loan / EMI Assistance</option>
+          <option>Solar System Design & Installation</option>
+          <option>Maintenance / Service</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="form-group"><label>Address / Village</label><input type="text" placeholder="Where should we visit?"></div>
+      <div class="form-group"><label>Details</label><textarea placeholder="Roof size, current electricity bill, best time to visit..."></textarea></div>
+      <button type="submit" class="submit-btn">Request Free Site Visit ✦</button>
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Qasmi Enterprises<span>.</span></div>
+  <div class="footer-copy">© 2026 M/s Qasmi Enterprises — PM Surya Ghar Yojna. Baghra, Muzaffarnagar.</div>
+  <div class="footer-socials">
+    <a class="social-btn" href="tel:+918082347215" title="Call">📞</a>
+    <a class="social-btn" href="https://wa.me/918082347215" target="_blank" title="WhatsApp">💬</a>
+    <a class="social-btn" href="https://maps.google.com/?q=Bhartiya+State+Bank+Mandi+Road+Baghra+Muzaffarnagar" target="_blank" title="Location">📍</a>
+  </div>
+</footer>
+
+<a href="https://wa.me/918082347215?text=Hi%2C%20I%20want%20a%20free%20solar%20quote%20for%20my%20home." target="_blank" class="wa-float" title="Chat on WhatsApp">💬</a>
+
+<script>
+// MOBILE NAV
+function openMobileNav(){ document.getElementById('mobileNav').classList.add('open'); }
+function closeMobileNav(){ document.getElementById('mobileNav').classList.remove('open'); }
+
+// SCROLL FADE
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((e,i) => { if (e.isIntersecting) setTimeout(()=>e.target.classList.add('visible'), i*70); });
+}, { threshold: 0.12 });
+document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+// NAV BG ON SCROLL
+window.addEventListener('scroll', () => {
+  document.querySelector('nav').style.background = window.scrollY > 40 ? 'rgba(7,19,36,0.94)' : 'rgba(7,19,36,0.7)';
+});
+
+// FORM
+function handleSubmit(e){
+  e.preventDefault();
+  const btn = e.target.querySelector('button[type=submit]');
+  const original = btn.textContent;
+  btn.textContent = '✓ Request Sent!';
+  btn.style.background = '#2fd47a';
+  setTimeout(() => { btn.textContent = original; btn.style.background = ''; e.target.reset(); }, 2800);
+}
+</script>
+</body>
+</html>
